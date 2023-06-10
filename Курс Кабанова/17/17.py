@@ -14,6 +14,3 @@ for i in range(len(nums) - 1):
         count += 1
         mx = max(mx, sm)
 print(count, mx)
-
-
-
