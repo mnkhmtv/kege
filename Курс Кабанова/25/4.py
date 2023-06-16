@@ -1,19 +1,17 @@
-def sum_div(x):
-    sm = 0
-    for i in range(2, int(x ** 0.5) + 1):
+def sum_divs(x):
+    s = 0
+    for i in range(2, int(x**0.5) + 1):
         if x % i == 0:
-            sm += x // i + i
-    return sm
+            s += i + x // i
+    return s
 
 ans = []
-for num in range(150_000, 250_000):
-    S = sum_div(num)
+for n in range(150_000, 200_000):
+    S = sum_divs(n)
     if S % 13 == 10:
-        if len(ans) <= 7:
-            ans += [[num, S]]
-        else:
+        ans.append([n, S])
+        if len(ans) > 7:
             break
 
-ans.sort()
-for i in ans:
-    print(*i)
+for i in range(len(ans) - 1):
+    print(ans[i][0], ans[i][1])
